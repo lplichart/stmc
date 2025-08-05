@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AEA58DBA-9872-408D-BF6C-D68459DCB112}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mertens</RootNamespace>
+    <AssemblyName>Mertens</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Mertens.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.2.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLogic\Beheerder.cs" />
+    <Compile Include="BusinessLogic\Dossier.cs" />
+    <Compile Include="BusinessLogic\ExcelBuilder.cs" />
+    <Compile Include="BusinessLogic\Factuur.cs" />
+    <Compile Include="BusinessLogic\Gemeente.cs" />
+    <Compile Include="BusinessLogic\Kost.cs" />
+    <Compile Include="BusinessLogic\KostDetail.cs" />
+    <Compile Include="BusinessLogic\Maatschappij.cs" />
+    <Compile Include="BusinessLogic\Partij.cs" />
+    <Compile Include="BusinessLogic\Prestatie.cs" />
+    <Compile Include="BusinessLogic\Reporting.cs" />
+    <Compile Include="Dao\AdresboekDao.cs" />
+    <Compile Include="Dao\BeheerderDao.cs" />
+    <Compile Include="Dao\ConnectionStringManager.cs" />
+    <Compile Include="Dao\ContractDao.cs" />
+    <Compile Include="Dao\DaoImplementation.cs" />
+    <Compile Include="Dao\DossierDao.cs" />
+    <Compile Include="Dao\FactuurDao.cs" />
+    <Compile Include="Dao\GemeenteDao.cs" />
+    <Compile Include="Dao\HoedanigheidDao.cs" />
+    <Compile Include="Dao\KostDao.cs" />
+    <Compile Include="Dao\MaatschappijDao.cs" />
+    <Compile Include="Dao\PartijDao.cs" />
+    <Compile Include="Dao\PrestatieDao.cs" />
+    <Compile Include="Dao\PrijslijstDao.cs" />
+    <Compile Include="Forms\DialogBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DialogBoxForm.Designer.cs">
+      <DependentUpon>DialogBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAdresboek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAdresboek.Designer.cs">
+      <DependentUpon>frmAdresboek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBeheerderAanpassen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBeheerderAanpassen.Designer.cs">
+      <DependentUpon>frmBeheerderAanpassen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDetails.Designer.cs">
+      <DependentUpon>frmDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmHistorie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmHistorie.Designer.cs">
+      <DependentUpon>frmHistorie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMaatschappijAanpassen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMaatschappijAanpassen.Designer.cs">
+      <DependentUpon>frmMaatschappijAanpassen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMaatschappijBeheer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMaatschappijBeheer.Designer.cs">
+      <DependentUpon>frmMaatschappijBeheer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmNieuwDossier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmNieuwDossier.Designer.cs">
+      <DependentUpon>frmNieuwDossier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmNieuwFactuur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmNieuwFactuur.Designer.cs">
+      <DependentUpon>frmNieuwFactuur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmOpenstaandePrestaties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmOpenstaandePrestaties.Designer.cs">
+      <DependentUpon>frmOpenstaandePrestaties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmOverview.Designer.cs">
+      <DependentUpon>frmOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPartij.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPartij.Designer.cs">
+      <DependentUpon>frmPartij.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPayments.Designer.cs">
+      <DependentUpon>frmPayments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPrestatie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPrestatie.Designer.cs">
+      <DependentUpon>frmPrestatie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPrijslijst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPrijslijst.Designer.cs">
+      <DependentUpon>frmPrijslijst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmVerwacht.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmVerwacht.Designer.cs">
+      <DependentUpon>frmVerwacht.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmZoek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmZoek.Designer.cs">
+      <DependentUpon>frmZoek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListViewItemComparer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\DialogBoxForm.resx">
+      <DependentUpon>DialogBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAdresboek.resx">
+      <DependentUpon>frmAdresboek.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmBeheerderAanpassen.resx">
+      <DependentUpon>frmBeheerderAanpassen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDetails.resx">
+      <DependentUpon>frmDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmHistorie.resx">
+      <DependentUpon>frmHistorie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMaatschappijAanpassen.resx">
+      <DependentUpon>frmMaatschappijAanpassen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMaatschappijBeheer.resx">
+      <DependentUpon>frmMaatschappijBeheer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmNieuwDossier.resx">
+      <DependentUpon>frmNieuwDossier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmNieuwFactuur.resx">
+      <DependentUpon>frmNieuwFactuur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmOpenstaandePrestaties.resx">
+      <DependentUpon>frmOpenstaandePrestaties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmOverview.resx">
+      <DependentUpon>frmOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPartij.resx">
+      <DependentUpon>frmPartij.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPayments.resx">
+      <DependentUpon>frmPayments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPrestatie.resx">
+      <DependentUpon>frmPrestatie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPrijslijst.resx">
+      <DependentUpon>frmPrijslijst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmVerwacht.resx">
+      <DependentUpon>frmVerwacht.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmZoek.resx">
+      <DependentUpon>frmZoek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\connectionString.txt" />
+    <None Include="Data\printer.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

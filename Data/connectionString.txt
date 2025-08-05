@@ -1,0 +1,1 @@
+﻿Server=192.168.2.2;Database=db_mertens;Uid=user;Pwd=system;
